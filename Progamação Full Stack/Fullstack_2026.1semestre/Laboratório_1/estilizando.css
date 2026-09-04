@@ -1,0 +1,21 @@
+.contato {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.informacoes {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.contato:hover .informacoes {
+    max-height: 200px;
+    opacity: 1;
+}
+
+#sublinhar {
+    text-decoration: underline
+}
