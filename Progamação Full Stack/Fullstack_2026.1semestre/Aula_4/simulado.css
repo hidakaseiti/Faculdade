@@ -1,0 +1,193 @@
+.bgbege{
+    background-color: #FAF7F2;
+}
+
+a{
+    text-decoration: none;
+}
+
+.section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.avatar{
+    width: 200px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.desenvolvedora{
+    color:#D97757;
+    font-size: 17px;
+}
+
+.descricao{
+    color: #5B564C;
+    max-width: 550px;
+    font-size: 18px;
+}
+
+.section2 {
+    background-color: white;
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding-left: 100px;
+    gap: 100px;
+}
+
+.sobre{
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+    align-items: left;
+}
+
+.habilidades{
+    display:flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.programas{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.programas a{
+    color: #3F6C51;
+    background-color: #EFE7DB;
+    border: 1px solid #EFE7DB;
+    border-radius: 20px;
+    padding: 10px 15px;
+}
+
+.botoes{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.verprojetos{
+    border: 1px solid #3F6C51;
+    border-radius: 20px;
+    padding: 10px 15px;
+    background-color: #3F6C51;
+    color: white;
+}
+
+.entraremcontato{
+    color: #3F6C51;
+    border: 1px solid #3F6C51;
+    border-radius: 20px;
+    padding: 10px 15px;
+}
+
+.nav{
+    border-bottom: 1px solid #e8e5df;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nome{
+    font-weight: bold;
+    display: flex;
+    margin-left: 3%;
+}
+
+.menu{
+    display: flex;
+    gap: 30px;
+    margin-right: 3%;
+}
+
+.menu a{
+    color: #555;
+}
+
+.section3{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.sectioncontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 80px;
+}
+
+.imgtam{
+    width: 400px;
+    height: auto;
+}
+
+.financeiro{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    border: 1px solid #F1EAE3;
+    border-radius: 20px;
+    background-color: white;
+    padding-right: 50px;
+    padding-bottom: 20px;
+}
+
+.clima{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    border: 1px solid #F1EAE3;
+    border-radius: 20px;
+    background-color: white;
+    padding-right: 50px;
+    padding-bottom: 20px;
+}
+
+.tags{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.tags a{
+    color: #8B4B3A;
+    background-color: #F1EAE3;
+    border: 1px solid #F1EAE3;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.paddingleft{
+    padding-left: 30px;
+}
+
+.rodape{
+    background-color:#2B2A28;
+    color: #C9BDA9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.ladoalado{
+    display:flex;
+    flex-direction: row;
+}

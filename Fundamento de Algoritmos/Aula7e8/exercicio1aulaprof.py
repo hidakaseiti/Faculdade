@@ -1,0 +1,1 @@
+n = int(input('Digite a quantidade de números a serem testados: '))
