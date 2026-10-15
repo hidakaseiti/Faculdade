@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Aula 6</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Aula 6</h1>
+
+        <h2>Modificando o html via js</h2>
+
+        <span id="nome">Meu nome</span>
+
+        <h2>Exemplos:</h2>
+
+        <h3>Exemplo 1</h3>
+
+        <span id="R1">Resposta 1</span>
+
+        <h3>Exemplos de input</h3>
+        <input id="i1"  type="text"><br>
+        <input id="i2" type="number"><br>
+        <input id="i3" type="date"><br>
+        <input type="password"><br>
+        <input type="radio"><br>
+        <input type="checkbox"><br>
+        <input type="button" onclick="imprimir();"><br>
+
+        <h3>Exemplo 2</h3>
+        <p>Entre com um número: <input id="ex2_i" type='number' onchange="ex2();"></p>
+        <span id="R2"></span>
+
+        <h3>Exemplo 3</h3>
+        <p>Valor A: <input id="ex3_a" type="number"></p>
+        <p>Valor B: <input id="ex3_b" type="number"></p>
+        <input type="button" value="Somar" onclick="ex3();">
+        <span id="R3"></span>
+
+        <h3>Exemplo 4</h3>
+        <div onmouseover="ex4();">
+            <p>Valor A: <input id="ex4_a" type="number"></p>
+            <p>Valor B: <input id="ex4_b" type="number"></p>
+            <span id="R4"></span>
+        </div>
+
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
