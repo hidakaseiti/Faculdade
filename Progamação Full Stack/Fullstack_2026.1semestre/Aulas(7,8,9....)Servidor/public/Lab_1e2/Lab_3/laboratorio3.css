@@ -1,0 +1,126 @@
+#bg_lightgray {
+    background-color: lightgray;
+}
+
+.fontetam {
+    font-family: sans-serif;
+    font-size: 20pt;
+}
+
+.fontetam2 {
+    font-family: "Comic Sans MS", cursive;
+    font-size: 15pt;
+}
+
+.txt_verde {
+    color: darkgreen;
+}
+
+.txt_darkred {
+    color: darkred;
+}
+
+.txt_indigo {
+    color: indigo;
+}
+
+.txt_red {
+    color: red;
+}
+
+.bg_bisque {
+    background-color: bisque;
+}
+
+.solido {
+    border: 5px solid black;
+}
+
+#titulo {
+    display: inline-block;
+    margin-left: 500px;
+    margin-right: 350px;
+    text-align: center;
+}
+
+#javascript {
+    position: relative;
+    left: 9%;
+    top: 5%;
+}
+
+#bg_lightsky {
+    background-color: lightskyblue;
+    block-size: 40px;
+}
+
+.alinhamento {
+    align-content: center;
+    text-align: center;
+}
+
+.alinhamento2{
+    text-align: center;
+}
+
+.alinhamentohref {
+    margin-left: 40px;
+}
+
+#espacamento {
+    margin: 80px;
+    text-decoration: none;
+}
+
+#espacamento2 {
+    margin: 20px;
+}
+
+#central {
+    text-align: center;    
+}
+
+.livrotam {
+    widht: 250px;
+    height: 300px;
+}
+
+.imgtam {
+    width: 150px;
+    height: 150px;
+}
+
+.imgtamfinal {
+    widht: 100px;
+    height: 100px;
+}
+
+.iframetam {
+    width: 300px;
+    height: 300px;
+}
+
+#bg_yellow {
+    margin-left: 500px;
+    margin-right: 500px;
+    background-color: yellow;
+}
+
+.tracejado {
+    border: 3px dashed red;
+}
+
+.posicionamento{ 
+    position: relative;
+    left: 38%;
+}
+
+.inlineblock {
+    display: inline-block;
+    margin-left: 30%;
+}
+
+.positioncss {
+    position:relative;
+    left: 38%;
+}

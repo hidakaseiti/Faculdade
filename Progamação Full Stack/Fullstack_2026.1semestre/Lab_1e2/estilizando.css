@@ -1,0 +1,57 @@
+.contato {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.informacoes {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.contato:hover .informacoes {
+    max-height: 200px;
+    opacity: 1;
+}
+
+#sublinhar {
+    text-decoration: underline
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+iframe {
+    display: block;
+    margin: 15px auto;
+    max-width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 700px;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 10px 14px;
+}
+
+th {
+    background-color: #eee;
+}
