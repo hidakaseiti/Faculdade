@@ -2,7 +2,7 @@ let canvas = document.getElementById('canvas')
 let ctx = canvas.getContext('2d');
 
 const personagem = new Image();
-personagem.src = "OIP.webp";
+personagem.src = "imagem/peppa.jpg";
 
 let x = 0;
 let y = 0;
