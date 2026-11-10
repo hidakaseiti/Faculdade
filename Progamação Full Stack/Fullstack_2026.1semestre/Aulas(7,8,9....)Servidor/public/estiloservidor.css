@@ -1,0 +1,19 @@
+body{
+    background-color: aqua;
+}
+
+h1{
+    text-align: center;
+}
+
+section{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+div{
+    background-color: burlywood;
+    margin: 10px;
+    padding: 10px;
+}
