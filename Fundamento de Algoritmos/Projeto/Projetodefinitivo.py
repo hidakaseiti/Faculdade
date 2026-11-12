@@ -28,6 +28,86 @@ def save_usuarios():
             usuarios.txt.write("---\n")
 
 
+def load_usuarios():
+    global usuarios
+
+    usuarios = {}
+
+    try:
+        with open('usuarios.txt', 'r'):
+
+            linhas = usuarios.txt.readlines()
+
+            cpf = None
+            dados = []
+
+            for linha in linhas:
+
+                linha = linha.strip()
+
+                if linha == '---':
+
+                    usuarios[cpf] = {
+                        'cpf': cpf,
+                        'nome': dados[0],
+                        'senha': dados[1],
+                        'brl': float(dados[2]),
+                        'criptomoedas': {
+                            'bitcoin': float(dados[3]),
+                            'ethereum': float(dados[4]),
+                            'ripple': float(dados[5])
+                        },
+                        'extrato': dados[6:]
+                    }
+
+                    cpf = None
+                    dados = []
+
+                elif cpf is None:
+                    cpf = linha
+
+                else:
+                    dados.append(linha)
+
+    except FileNotFoundError:
+        usuarios = {}
+
+
+def save_cripto():
+    with open('cripto.txt', 'w'):
+
+        for moeda, dados in cripto.items():
+            cripto.txt.write(f"{moeda}\n")
+            cripto.txt.write(f"{dados['sigla']}\n")
+            cripto.txt.write(f"{dados['cotacao']}\n")
+            cripto.txt.write(f"{dados['taxa_compra']}\n")
+            cripto.txt.write(f"{dados['taxa_venda']}\n")
+
+def load_cripto():
+    global cripto
+
+    try:
+        with open('cripto.txt', 'r'):
+
+            linhas = cripto.txt.readlines()
+
+            cripto = {}
+
+            for i in range(0, len(linhas), 5):
+
+                moeda = linhas[i].strip()
+
+                cripto[moeda] = {
+                    'sigla': linhas[i + 1].strip(),
+                    'cotacao': float(linhas[i + 2].strip()),
+                    'taxa_compra': float(linhas[i + 3].strip()),
+                    'taxa_venda': float(linhas[i + 4].strip())
+                }
+
+    except FileNotFoundError:
+        pass
+
+
 def cadastrar(usuarios):
     nome = input('Qual o seu nome? ').strip()
 
@@ -61,7 +141,21 @@ def cadastrar(usuarios):
         'extrato': []
     }
 
+    save_usuarios()
+
     print('Seu cadastro foi realizado!')
+
+def fazer_login(usuarios, cripto):
+    while True:
+        cpf = input('CPF sem pontos e traços: ')
+        senha = input('Digite sua senha de 6 dígitos: ')
+
+        if cpf in usuarios and usuarios[cpf]['senha'] == senha:
+            print(f"Bem vindo {usuarios[cpf]['nome']}")
+            menu(usuarios, cripto, cpf)
+            return
+        else:
+            print('CPF ou senha incorreto(s)!')
 
 def mostrar_saldos(usuarios, cpf):
     print(f"Reais: {usuarios[cpf]['brl']:.2f}")
@@ -102,6 +196,9 @@ def depositar(usuarios, cpf):
                 f"ETH: {usuarios[cpf]['criptomoedas']['ethereum']} "
                 f"XRP: {usuarios[cpf]['criptomoedas']['ripple']}")
     usuarios[cpf]['extrato'].append(transacao)
+
+    save_usuarios()
+
     mostrar_saldos(usuarios, cpf)
 
         
@@ -119,13 +216,16 @@ def sacar(usuarios, cpf):
                 f"ETH: {usuarios[cpf]['criptomoedas']['ethereum']} "
                 f"XRP: {usuarios[cpf]['criptomoedas']['ripple']}")
     usuarios[cpf]['extrato'].append(transacao)
+
+    save_usuarios()
+
     mostrar_saldos(usuarios, cpf)
 
 
 def c_criptomoedas(usuarios, cripto, cpf):
     senha = input('Digite sua senha: ')
     if senha == usuarios[cpf]['senha']:
-        print(f"Cotações: \n Bitcoin: {cripto['bitcoin']['cotacao':]:.2f}\n Ethereum: {cripto['ethereum']['cotacao']:.2f}\n Ripple: {cripto['ripple']['cotacao']:.2f}")
+        print(f"Cotações: \n Bitcoin: {cripto['bitcoin']['cotacao']:.2f}\n Ethereum: {cripto['ethereum']['cotacao']:.2f}\n Ripple: {cripto['ripple']['cotacao']:.2f}")
         print(f"1.Bitcoin\n2.Ethereum\n3.Ripple")
         comprar = int(input('Qual moeda deseja comprar: '))
         if comprar == 1:
@@ -160,6 +260,8 @@ def c_criptomoedas(usuarios, cripto, cpf):
                     f"ETH: {usuarios[cpf]['criptomoedas']['ethereum']} "
                     f"XRP: {usuarios[cpf]['criptomoedas']['ripple']}")
         usuarios[cpf]['extrato'].append(transacao)
+
+        save_usuarios()
     else:
         print('Senha incorreta')
     
@@ -201,6 +303,8 @@ def v_criptomoedas(usuarios, cripto, cpf):
                     f"ETH: {usuarios[cpf]['criptomoedas']['ethereum']} "
                     f"XRP: {usuarios[cpf]['criptomoedas']['ripple']}")
         usuarios[cpf]['extrato'].append(transacao)
+
+        save_usuarios()
     else:
         print('Senha incorreta')
     
@@ -209,6 +313,8 @@ def atu_cotacao(cripto):
         variacao = random.uniform(-0.05, 0.05)
         nova = cripto[moeda]['cotacao'] * (1 + variacao)
         cripto[moeda]['cotacao'] = nova
+
+    save_cripto()
     print(f"Cotações: \n Bitcoin: {cripto['bitcoin']['cotacao']:.2f}\n Ethereum: {cripto['ethereum']['cotacao']:.2f}\n Ripple: {cripto['ripple']['cotacao']:.2f}")
 
 def menu(usuarios, cripto, cpf):
@@ -235,18 +341,6 @@ def menu(usuarios, cripto, cpf):
         else:
             print('Erro: escolha um número de 1 a 8')
 
-def fazer_login(usuarios, cripto):
-    while True:
-        cpf = input('CPF sem pontos e traços: ')
-        senha = input('Digite sua senha de 6 dígitos: ')
-
-        if cpf in usuarios and usuarios[cpf]['senha'] == senha:
-            print(f"Bem vindo {usuarios[cpf]['nome']}")
-            menu(usuarios, cripto, cpf)
-            return
-        else:
-            print('CPF ou senha incorreto(s)!')
-
 def menuinicial():
     print('1.Cadastrar \n2.Fazer login\n3.Sair')
     while True:
@@ -260,5 +354,9 @@ def menuinicial():
             break
         else:
             print('Opção inválida')
+
+
+load_usuarios()
+load_cripto()
 
 menuinicial()

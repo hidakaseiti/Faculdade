@@ -44,17 +44,17 @@
 #s.close()
 
 #Exercicio2
-f = open('pares.txt', 'r')
-p = open('multiplos4.txt', 'w')
+# f = open('pares.txt', 'r')
+# p = open('multiplos4.txt', 'w')
 
-for line in f: #nao da para retornar int para fazer conta pois esta tudo em uma linha só,desse jeito é preciso pegar esses numeros de algum jeito
-    x = line.split(',') #retorna uma lista por isso,tem de iterar mais uma vez cada item da lista
-    for i in x:
-        m = int(i) 
-        if m % 4 == 0:
-            p.write(f'{i},') #da mais ou menos certo, no final, por causa do , ele esta separando por numa lista e tem um elemnto sem nada apos a virgula, portanto da erro ao dividir nada por 4
-f.close()
-p.close()
+# for line in f: #nao da para retornar int para fazer conta pois esta tudo em uma linha só,desse jeito é preciso pegar esses numeros de algum jeito
+#     x = line.split(',') #retorna uma lista por isso,tem de iterar mais uma vez cada item da lista
+#     for i in x:
+#         m = int(i) 
+#         if m % 4 == 0:
+#             p.write(f'{i},') #da mais ou menos certo, no final, por causa do , ele esta separando por numa lista e tem um elemnto sem nada apos a virgula, portanto da erro ao dividir nada por 4
+# f.close()
+# p.close()
 
 #jeito do professor
 #pares = open('pares.txt', 'r')#
